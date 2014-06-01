@@ -1,0 +1,31 @@
+
+Feb 18, 2013
+
+Note 1 :
+The following topics should be crystal clear: 
+1. Append, Delete, Insert, Reverse, Rotate, Shuffle 
+2. Sort (Bubble, Selection, Insertion, Indirect Insertion) 
+2. Linear Search Algorithm, Binary Search Algorithm
+
+
+
+
+Note 2 :    Source:  http://www.mikeware.us/cpp/?p=44
+The array has an associated base address. To find the element with 
+index[r][c], calculate:
+
+base + r * (5*itemSize) + c*itemSize
+
+where,
+base is the array’s base memory address
+r is the row of the element to find
+itemSize is the size (in terms of memory) of each element in the array
+c is the column of the element to find 
+
+
+The above calculation computes the proper memory offset for the element 
+with subscript [r][c]. This is why a programmer must explicitly declare 
+the number of columns when using arrays with two or more dimensions. We 
+only need to know the row and column location of the element we wish to 
+reference. The program loader’s job is to calculate its memory location 
+using the above formula (or one similar to it).

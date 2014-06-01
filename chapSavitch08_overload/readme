@@ -1,0 +1,31 @@
+Note 1:
+Each of the following operators are overloaded as a public friend 
+function of a class:
+
+arithmatci operators: +, -, *, /
+relational operators: >, <, >=, <=, ==, !=
+stream operators    : >>, << 
+
+
+
+Note 2:
+Each of the following operators are overloaded as a non-static member 
+function of a class:
+
+1. function application operator, ()
+2. arrow operator, -> 
+3. increment and decrement operators, ++, --
+
+4 .copy assignment operator, =
+5. arithmatic assignment operator, *=
+6. array operator, []
+
+
+
+Note 3:
+The following opertors can not be overloaded:
+1. dot operator, .
+2. scope resolution operator, ::
+3. sizeof operator, sizeof
+4. ?:
+5. operator, .*

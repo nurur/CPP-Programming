@@ -1,0 +1,26 @@
+
+>
+The this pointer is a pointer accessible only within the non-static 
+methods of a class. It points to the object for which the method is 
+called. 
+
+Static methods do not have a this pointer (since they can be called 
+without an object).
+
+
+>
+When a non-static method is called for an object, the address of the 
+object is passed by the compiler as an additional, hidden argument 
+to the method. For example, the following method call:
+
+Date myDate(6, 12, 2010);
+
+myDate.set_month(8);
+
+
+can be interpreted this way:
+
+set_month(&myDate, 8);
+
+The object's address is available from within the method as the this 
+pointer.

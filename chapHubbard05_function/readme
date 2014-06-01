@@ -1,0 +1,58 @@
+
+Reference:
+http://www.learncpp.com/cpp-tutorial/73-passing-arguments-by-reference/
+
+Note 1:
+A. One way to allow functions to modify the value of argument is by using 
+pass by reference.
+
+
+B. Sometimes we need a function to return multiple values. However, functions 
+can only have one return value. One way to return multiple values is using 
+reference parameters:
+
+
+C. Pass by const reference
+One of the major disadvantages of pass by value is that all arguments passed 
+by value are copied to the parameters. When the arguments are large structs 
+or classes, this can take a lot of time. References provide a way to avoid 
+this penalty. When an argument is passed by reference, a reference is created 
+to the actual argument (which takes minimal time) and no copying of values 
+takes place. This allows us to pass large structs and classes with a minimum 
+performance penalty.
+
+However, this also opens us up to potential trouble. References allow the 
+function to change the value of the argument, which in many cases is 
+undesirable. If we know that a function should not change the value of an 
+argument, but don’t want to pass by value, the best solution is to pass by 
+const reference.
+
+
+D. Keep the following rules in mind:
+1. pass by value and return by value  
+int     f(int x);   
+
+2. pass by reference and return by reference 
+b. int   f(int& x); wrong 
+a. int&   f(int x); wrong
+c. int&  f(int& x);  
+
+3. pass by address and retrun by address
+int*  f(int x);  
+int*  f(int* x);  
+int*  f(int*  x, int  n);
+
+4. pass by reference of address and retrun by address
+int*  f(int*& x, int& n);  
+
+
+
+
+
+Note 2:
+Must have a clear picture on implementing the following algorithms
+
+Print patterns
+Pascal's triangle
+Floyd's triangle
+Fibonacci series

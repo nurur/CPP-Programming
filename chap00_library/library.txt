@@ -1,0 +1,60 @@
+
+Definition:
+For static libraries, the actual library is placed in the final 
+program, while for shared libraries, only a reference to the 
+library is placed inside.
+
+======================================================
+Creating Static Library
+steps:
+c++ -c ctest1.cpp ctest2.cpp
+ar -crv libctest.a ctest1.o ctest2.o
+c++ -L/users/nrahman/rsro/cpp/  -lctest  prog.cpp -o prog 
+./prog 
+
+
+======================================================
+Creating Shared Library
+Local case:
+c++ -Wall -Werror -fpic -c ctest1.cpp ctest2.cpp
+c++ -shared -Wl -o libctest.so  ctest1.o ctest2.o
+	
+
+making library available at runtime:
+1. using LD_LIBRARY_PATH:
+setenv LD_LIBRARY_PATH /users/nrahman/rsro/cpp/:$LD_LIBRARY_PATH
+
+c++ -Wall  -L/users/nrahman/rsro/cpp  -lctest  prog.cpp -o prog
+./prog
+
+
+2. using rpath:
+c++ -Wall  -Wl,-rpath=/home/username/libctest.so  -lctest  prog.cpp  -o prog
+./prog
+
+
+
+Global case:
+c++ -Wall -Werror -fpic -c ctest1.cpp ctest2.cpp
+c++ -shared -Wl -o libctest.so  ctest1.o ctest2.o
+		    
+mv libctest.so  /usr/lib
+
+#c++ -shared -Wl,-soname,libctest.so -o libctest.so  *.o
+#ln -sf /usr/lib/libctest.so /usr/lib/libctest.so
+#ln -sf /usr/lib/libctest.so /usr/lib/libctest.so.1
+#c++ -Wall -L/usr/lib -lctest  prog.cpp  -o prog
+
+ldconfig -n /usr/lib
+ldconfig -p | grep libctest.so
+
+c++ -Wall -lctest  prog.cpp  -o prog
+ldd prog | grep ctest
+./prog
+======================================================
+
+Position Independent Code (PIC): PIC is code that works no matter 
+where in memory it is placed. Because several different programs 
+can all use one instance of your shared library, the library cannot 
+store things at fixed addresses, since the location of that library 
+in memory will vary from program to program.

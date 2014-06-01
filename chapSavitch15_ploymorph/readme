@@ -1,0 +1,17 @@
+
+
+Note 1 : 
+Virtual Base Class, Virtual Function: 
+
+Source : http://www.learncpp.com/cpp-tutorial/118-virtual-base-classes/
+
+
+Note that the Virtual Base Class, Virtual Function are two different 
+things: 
+
+1. Virtual base classes are created before non-virtual base classes, 
+which ensures all bases get created before their derived classes.
+
+2. If a class inherits one or more classes that have virtual parents, 
+the most derived class is responsible for constructing the virtual 
+base class.

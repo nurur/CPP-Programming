@@ -1,0 +1,46 @@
+
+Note:
+Memory management with Linked List
+Making deep copy of the List
+Printing the List in reverse order 
+1. Does it make sense to think of copy constructor of a Node?
+
+
+
+Singly Linked List :
+example01.cpp	
+example02.cpp	
+example03.cpp   (Constructing, Deep Copying, & Traversing) 
+example04.cpp   (Inserting)
+example05.cpp   (Deleting)
+example06.cpp   (Searching)
+example07.cpp	(Sorting)
+
+
+Doubly Linked List:
+example08.cpp	(Constructing, Deep Copying, Traversing forward & Backward)
+example09.cpp	(Deleting)
+example10.cpp   (Searching)
+example11.cpp	(Sorting)
+
+
+Singly Linked List using Template
+example12.cpp
+
+
+Stack Class : 
+example13.a.cpp  (using settor and gettor) 
+example13.b.cpp  (using friend class) 
+
+
+Queue Class : 
+example14.a.cpp  (using settor and gettor) 
+example14.b.cpp  (using friend class) 
+
+
+Iterator Class
+example17.cpp   
+
+
+Tree Class
+example18.cpp   

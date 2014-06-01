@@ -1,0 +1,57 @@
+// Example: 12.12
+// Event of Memory Leaks 
+// Without Virtual Destructor 
+
+
+#include <iostream>
+using namespace std;
+
+
+class X
+{
+public:
+  X() { p = new int[2]; cout << " X(). ";}
+ ~X() { delete [] p;    cout << "~X().\n";}
+
+private:
+  int* p;
+};
+
+
+class Y : public X
+{
+public:
+  Y() { q = new int[1023]; cout << " Y(): Y::q = " << q << ". ";}
+ ~Y() { delete [] q;       cout << "~Y(). ";}
+
+private:
+  int* q;
+};
+
+
+
+
+
+int main()
+{
+  cout << endl;
+
+  // No memory leaks
+  for (int i=0; i<8; i++)
+ { 
+   X* r = new X; 
+   delete r;       // delete call frees X 
+ } 
+  cout << endl;
+
+
+  // Obvious memory leaks
+  for (int i=0; i<8; i++)
+ { 
+   X* r = new Y; 
+   delete r;       // delete call only frees X but not Y!
+ } 
+  
+
+  return 0;
+}
