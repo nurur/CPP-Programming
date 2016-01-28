@@ -1,4 +1,4 @@
-// myadd.h
+// myAddition.h
 
 
 #ifndef ADD_H
@@ -7,7 +7,7 @@
 #include "myMath.h"
 
 
-int add(int a, int b)
+int addition(int a, int b)
 {
   return (a+b);
 }
