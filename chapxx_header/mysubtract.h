@@ -1,13 +1,13 @@
-// mysubtract.h
+// mySubtraction.h
 
 
-#ifndef SUBTRACT_H
-#define SUBTRACT_H  
+#ifndef SUBTRACTION_H
+#define SUBTRACTION_H  
 
 #include "myMath.h"
 
 
-int subtract(int a, int b)
+int subtraction(int a, int b)
 {
   return (a-b); 
 }
