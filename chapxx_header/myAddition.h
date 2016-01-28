@@ -1,8 +1,8 @@
 // myAddition.h
 
 
-#ifndef ADD_H
-#define ADD_H  
+#ifndef ADDITION_H
+#define ADDITION_H  
 
 #include "myMath.h"
 
