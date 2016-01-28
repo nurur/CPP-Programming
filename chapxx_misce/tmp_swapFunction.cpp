@@ -1,8 +1,9 @@
 // EXAMPLE:
 // Swap Function 
-// With tmp variable
-// With XOR algorithm 
-// With Pointer variable 
+// using reference variable
+// using pointer variable 
+// using reference variable and XOR operation 
+
 
 
 #include <iostream>
