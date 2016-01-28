@@ -1,8 +1,8 @@
-// main.cpp
+// main program
 
 #include <iostream>
-#include "myadd.h"
-#include "mysubtract.h"
+#include "myAddition.h"
+#include "mySubtraction.h"
 using namespace std;
 
 
